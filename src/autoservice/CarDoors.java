@@ -8,7 +8,6 @@ public class CarDoors {
 
     }
 
-
     public void changeDoorState(){
         doorOpened = !doorOpened;
     }
@@ -18,12 +17,13 @@ public class CarDoors {
     }
 
     public void getDoorInfo(){
-        System.out.println("Дверь " + (doorOpened ? "открыта." : "закрыта."));
+        System.out.println("\tДверь " + (doorOpened ? "открыта." : "закрыта."));
     }
 
     public void getWindowInfo(){
-        System.out.println("Окно " + (windowOpened ? "открыто." : "закрыто."));
+        System.out.println("\tОкно " + (windowOpened ? "открыто." : "закрыто."));
     }
+
 
 /////Избыточный код
 
@@ -56,6 +56,5 @@ public class CarDoors {
     public void setWindowOpened(boolean windowOpened){
         this.windowOpened = windowOpened;
     }
-
 
 }

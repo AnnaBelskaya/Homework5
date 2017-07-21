@@ -105,7 +105,7 @@ public class Car {
 
     public void countMaxCurrentSpeed(){
         if (currentPassNum > 0) {
-            System.out.print("\t\tМаксимальная возможная скорость:  ");
+            System.out.print("\tМаксимальная возможная скорость:  ");
             if (wheelsNum > 0) {
                 double tireState = wheels.get(0).getTireState();
                 for (int i = 0; i < wheelsNum; i++) {
@@ -274,7 +274,7 @@ public class Car {
     /////////////////General/////////////////
 
     public void getInfo(){
-        System.out.println("ОБЩА ИНФОРМАЦИЯ");
+        System.out.println("ОБЩАZ ИНФОРМАЦИЯ");
         System.out.println("\tДата производства:\t" + year);
         System.out.println("\tТип двигателя:\t" + engineType);
         System.out.println("\tВремя разгона:\t" + accelerationTime);
@@ -282,7 +282,7 @@ public class Car {
         System.out.printf("\tТекущая скорость:\t%d\n", currentSpeed);
         countMaxCurrentSpeed();
         System.out.println("\tПассажировместимость:\t" + seatingCapacity);
-        System.out.println("\t\tТекущее количество пассажиров:\t" + currentPassNum);
+        System.out.println("\tТекущее количество пассажиров:\t" + currentPassNum);
         System.out.printf("\tКоличество дверей:\t%d\n\tКоличетсов колёс: \t%d\n", doorsNum, wheelsNum);
     }
 

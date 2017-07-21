@@ -82,8 +82,8 @@ public class MainMenu {
         System.out.println("\nДВЕРИ:");
         System.out.println("Текущее количество дверей: " + car.getDoorsNum());
         System.out.println("\t\t1. Открыть/закрыть дверь.");
-        System.out.println("\t\t3. Вывести общую информацию.");
-        System.out.println("\t\t4. Назад в меню.");
+        System.out.println("\t\t2. Вывести общую информацию.");
+        System.out.println("\t\t3. Назад в меню.");
         System.out.print("\t\tВведите номер действия [1-4]: ");
         switch (s.nextInt()) {
             case 1:
