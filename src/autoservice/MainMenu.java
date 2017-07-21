@@ -121,7 +121,7 @@ public class MainMenu {
         System.out.println("Текущая скорость: " + car.getCurrentSpeed());
         System.out.println("\t\t1. Изменить текущую скорость.");
         System.out.println("\t\t2. Изменить максимальную скорость.");
-        System.out.println("\t\t3. Показать максимальную скорость.");
+        System.out.println("\t\t3. Показать максимальную возможную скорость.");
         System.out.println("\t\t4. Назад в меню.");
         System.out.print("\t\tВведите номер действия [1-4]: ");
         switch (s.nextInt()) {

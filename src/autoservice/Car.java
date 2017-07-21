@@ -283,7 +283,7 @@ public class Car {
         countMaxCurrentSpeed();
         System.out.println("\tПассажировместимость:\t" + seatingCapacity);
         System.out.println("\tТекущее количество пассажиров:\t" + currentPassNum);
-        System.out.printf("\tКоличество дверей:\t%d\n\tКоличетсов колёс: \t%d\n", doorsNum, wheelsNum);
+        System.out.printf("\tКоличество дверей:\t%d\n\tКоличество колёс: \t%d\n", doorsNum, wheelsNum);
     }
 
     /*public Car(int year, String engineType, int maxSpeed, int accelerationTime, int seatingCapacity,
