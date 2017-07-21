@@ -167,7 +167,7 @@ public class MainMenu {
         System.out.print("\t\tEnter the number of the next action: ");
         switch (s.nextInt()) {
             case 1:
-                car.addWheel();
+                car.addSeveralWheels();
                 actionsWithWheels();
                 break;
             case 2:

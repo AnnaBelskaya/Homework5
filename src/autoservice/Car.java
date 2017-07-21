@@ -173,9 +173,13 @@ public class Car {
 
     ///////////////Wheels///////////////
 
-    public void addWheel(){
-        wheelsNum++;
-        wheels.add(new CarWheels());
+    public void addSeveralWheels(){
+        System.out.print("Enter the number of wheels you want to add: ");
+        int n = s.nextInt();
+        wheelsNum+=n;
+        for (int i = 0; i < n; i++) {
+            wheels.add(new CarWheels());
+        }
         System.out.println("One wheel added. Total number of wheels: " + wheelsNum);
     }
 
