@@ -19,7 +19,7 @@ public class MainMenu {
         nextActions();
     }
 
-    public void nextActions(){
+    private void nextActions(){
         System.out.println("МЕНЮ");
         System.out.println("\t1. Добавить/высадить 1 пассажира.");
         System.out.println("\t2. Открыть/закрыть дверь");
@@ -52,7 +52,7 @@ public class MainMenu {
     }
 
 
-    public void actionsWithPassengers(){
+    private void actionsWithPassengers(){
         System.out.println("\nПАССАЖИРЫ:");
         car.passengersInfo();
         System.out.println("\t\t1. Добавить пассажира.");
@@ -78,33 +78,28 @@ public class MainMenu {
                 break;
         }
     }
-    public void actionsWithDoors() {
+    private void actionsWithDoors() {
         System.out.println("\nДВЕРИ:");
         System.out.println("Текущее количество дверей: " + car.getDoorsNum());
-        System.out.println("\t\t1. Открыть дверь.");
-        System.out.println("\t\t2. Закрыть дверь.");
+        System.out.println("\t\t1. Открыть/закрыть дверь.");
         System.out.println("\t\t3. Вывести общую информацию.");
         System.out.println("\t\t4. Назад в меню.");
         System.out.print("\t\tВведите номер действия [1-4]: ");
         switch (s.nextInt()) {
             case 1:
-                car.changeDoorState(true);
+                car.changeDoorState();
                 actionsWithDoors();
                 break;
             case 2:
-                car.changeDoorState(false);
-                actionsWithDoors();
-                break;
-            case 3:
                 car.doorsInfo();
                 actionsWithDoors();
                 break;
-            case 4:
+            case 3:
                 nextActions();
                 break;
         }
     }
-    public void actionsWithWindows(){
+    private void actionsWithWindows(){
         System.out.println("\nОКНА:");
         System.out.println("Текущее количество окон: " + car.getDoorsNum());
         System.out.println("\t\t1. Открыть/закрыть окно.");
@@ -121,7 +116,7 @@ public class MainMenu {
         }
 
     }
-    public void actionsWithSpeed(){
+    private void actionsWithSpeed(){
         System.out.println("\nСКОРОСТЬ:");
         System.out.println("Текущая скорость: " + car.getCurrentSpeed());
         System.out.println("\t\t1. Изменить текущую скорость.");
@@ -147,7 +142,7 @@ public class MainMenu {
                 break;
         }
     }
-    public void actionsWithWheels(){
+    private void actionsWithWheels(){
         System.out.println("\nКОЛЁСА/ШИНЫ:");
         System.out.println("Текущее количество колёс: " + car.getWheelsNum());
         System.out.println("\t\t1. Добавить колесо.");
@@ -183,7 +178,7 @@ public class MainMenu {
                 break;
         }
     }
-    public void generalInfo() {
+    private void generalInfo() {
         System.out.println("\nОБЩАЯ ИНФОРМАЦИЯ:");
         System.out.println("\t\t1. Вывести общую информацию.");
         System.out.println("\t\t2. Изменить тип двигателя.");

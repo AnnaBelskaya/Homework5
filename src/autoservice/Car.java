@@ -225,17 +225,14 @@ public class Car {
 
     /////////////////Doors/////////////////
 
-    public void changeDoorState(boolean open){
+    public void changeDoorState(){
         if (doorsNum >0) {
             System.out.printf("\t\tВведите индекс двери (1-%d): ", doorsNum);
             int index = s.nextInt();
-            if (index<=doorsNum && index > 0){
+            if (index<=doorsNum && index > 0) {
                 index--;
-                if (open) {
-                    doors.get(index).openTheDoor();
-                } else {
-                    doors.get(index).closeTheDoor();
-                }
+                doors.get(index).changeDoorState();
+                doors.get(index).getDoorInfo();
             } else {
                 System.out.println("\t\tДвери с таким индексом не сщуствует.");
             }
@@ -266,6 +263,7 @@ public class Car {
             if (index<=doorsNum && index > 0){
                 index--;
                 doors.get(index).changeWindowState();
+                doors.get(index).getWindowInfo();
             } else {
                 System.out.println("\t\tОкна с таким индексом не существует.");
             }

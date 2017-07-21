@@ -8,19 +8,6 @@ public class CarDoors {
 
     }
 
-    public CarDoors(boolean doorOpened, boolean windowOpened){
-        this.doorOpened = doorOpened;
-        this.windowOpened = windowOpened;
-    }
-
-
-    public boolean getDoorOpened(){
-        return doorOpened;
-    }
-
-    public boolean isWindowOpened(){
-        return windowOpened;
-    }
 
     public void changeDoorState(){
         doorOpened = !doorOpened;
@@ -31,13 +18,28 @@ public class CarDoors {
     }
 
     public void getDoorInfo(){
-        System.out.println("дверь " + (doorOpened ? "открыта." : "закрыта."));
+        System.out.println("Дверь " + (doorOpened ? "открыта." : "закрыта."));
     }
 
     public void getWindowInfo(){
-        System.out.println("окно " + (windowOpened ? "открыто." : "закрыто."));
+        System.out.println("Окно " + (windowOpened ? "открыто." : "закрыто."));
     }
 
+/////Избыточный код
+
+
+    public CarDoors(boolean doorOpened, boolean windowOpened){
+        this.doorOpened = doorOpened;
+        this.windowOpened = windowOpened;
+    }
+
+    public boolean getDoorOpened(){
+        return doorOpened;
+    }
+
+    public boolean isWindowOpened(){
+        return windowOpened;
+    }
 
     public void openTheDoor(){
         doorOpened = true;
