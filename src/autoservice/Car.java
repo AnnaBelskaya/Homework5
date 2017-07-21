@@ -38,22 +38,22 @@ public class Car {
     //////////////get/set/////////////
 
     public void setEngineType(){
-        System.out.print("Set engine type: ");
+        System.out.print("Тип двигателя: ");
         engineType = s.next();
     }
 
     public void setMaxSpeed(){
-        System.out.print("Set maximum speed: ");
+        System.out.print("Максимальная скорость: ");
         maxSpeed = s.nextInt();
     }
 
     public void setAccelerationTime(){
-        System.out.print("Set acceleration time: ");
+        System.out.print("Время разгона до 100 км/ч: ");
         accelerationTime = s.nextInt();
     }
 
     public void setSeatingCapacity(){
-        System.out.print("Set seating capacity: ");
+        System.out.print("Пассажировместимость: ");
         seatingCapacity = s.nextInt();
     }
 
@@ -65,16 +65,8 @@ public class Car {
         this.currentSpeed = currentSpeed;
     }
 
-    public int getMaxSpeed(){
-        return maxSpeed;
-    }
-
     public int getCurrentSpeed(){
         return currentSpeed;
-    }
-
-    public int getSeatingCapacity(){
-        return seatingCapacity;
     }
 
     public int getDoorsNum(){
@@ -88,7 +80,7 @@ public class Car {
     ///////////////Speed///////////////
 
     public void setSpeed(){
-        System.out.print("Set current speed: ");
+        System.out.print("Текущая скорость: ");
         int speed = s.nextInt();
         if (speed <= maxSpeed){
             setCurrentSpeed(speed);
@@ -99,21 +91,21 @@ public class Car {
 
     public void changeCurrentSpeed(){
         if (currentPassNum > 0) {
-            System.out.print("\t\tChanging the speed. Enter new value:  ");
+            System.out.print("\t\tВведите новое значение скорости:  ");
             int speed = s.nextInt();
             if (speed <= maxSpeed) {
                 currentSpeed = speed;
             } else {
-                System.out.println("\t\tThe value is too big.");
+                System.out.println("\t\tЧисло слишком большое.");
             }
         } else {
-            System.out.println("\t\tThere is no one in the car. The speed can't be changed.");
+            System.out.println("\t\tСкорость невозможно изменить, потому что в машине никого нет.");
         }
     }
 
     public void countMaxCurrentSpeed(){
         if (currentPassNum > 0) {
-            System.out.print("\t\tMaximum current speed:  ");
+            System.out.print("\t\tМаксимальная возможная скорость:  ");
             if (wheelsNum > 0) {
                 double tireState = wheels.get(0).getTireState();
                 for (int i = 0; i < wheelsNum; i++) {
@@ -123,21 +115,21 @@ public class Car {
                 }
                 System.out.println(maxSpeed * tireState);
             } else {
-                System.out.println("\t\tThere are no wheels in the car.");
+                System.out.println("\t\tВ машине нет колёс. Максимальная возможная скорость  - 0.");
             }
         } else {
-            System.out.println("\t\tThere is no one in the car. Maximum speed is 0.");
+            System.out.println("\t\tВ машине никого нет. Максимальная возможная скорость  - 0.");
         }
     }
 
     public void speedInfo(){
-        System.out.println("\t\tCurrent speed: " + currentSpeed);
+        System.out.println("\t\tТекущая скорость: " + currentSpeed);
     }
 
     ///////////////Passengers///////////////
 
     public void setPassengesNumber(){
-        System.out.print("Set current passengers number: ");
+        System.out.print("Введите количество пассажиров: ");
         int passengers = s.nextInt();
         if (passengers <= seatingCapacity){
             setCurrentPassNum(passengers);
@@ -150,7 +142,7 @@ public class Car {
         if (seatingCapacity - currentPassNum > 0){
             currentPassNum++;
         } else {
-            System.out.println("\t\tYou can't add more passengers.");
+            System.out.println("\t\tПашина переполнена. Невозможно добавить пассажира.\n");
         }
     }
 
@@ -158,29 +150,29 @@ public class Car {
         if (currentPassNum > 0){
             currentPassNum--;
         } else {
-            System.out.println("\t\tThere is no one in the car.");
+            System.out.println("\t\tВ машине никого нет.");
         }
     }
 
     public void removeAllPassengers(){
         currentPassNum = 0;
-        System.out.println("\t\tAll passengers are out.");
+        System.out.println("\t\tВсе пассажиры высажены из машины.");
     }
 
     public void passengersInfo(){
-        System.out.println("\t\tCurrent number of passengers: " + currentPassNum);
+        System.out.println("\t\tТекущее количество пассажиров: " + currentPassNum);
     }
 
     ///////////////Wheels///////////////
 
     public void addSeveralWheels(){
-        System.out.print("Enter the number of wheels you want to add: ");
+        System.out.print("Введите количество колёс, которые нужно добавить: ");
         int n = s.nextInt();
         wheelsNum+=n;
         for (int i = 0; i < n; i++) {
             wheels.add(new CarWheels());
         }
-        System.out.println("One wheel added. Total number of wheels: " + wheelsNum);
+        System.out.println("Колёса добавлены. Общее количество колёс: " + wheelsNum);
     }
 
     public void removeAllWheels(){
@@ -188,35 +180,35 @@ public class Car {
             wheels.remove(0);
         }
         wheelsNum = 0;
-        System.out.println("\t\tAll wheels were removed.");
+        System.out.println("\t\tВсе колёса сняты.");
     }
 
     public void setNewTire(){
         if (wheelsNum >0) {
-            System.out.printf("\t\tEnter the number of the wheel (1-%d): ", wheelsNum);
+            System.out.printf("\t\tВведите индекс колеса (1-%d): ", wheelsNum);
             int index = s.nextInt();
             if (index<=wheelsNum && index > 0){
                 wheels.get(--index).changeTire();
             } else {
-                System.out.println("\t\tYou entered wrong index.");
+                System.out.println("\t\tКолеса с таким индеексом не существует.");
             }
         } else {
-            System.out.println("\t\tThere are no wheels.");
+            System.out.println("\t\tВсе колёса сняты.");
         }
     }
 
     public void changeTireRubbing(){
         if (wheelsNum >0) {
-            System.out.printf("\t\tEnter the number of the wheel (1-%d): ", wheelsNum);
+            System.out.printf("\t\tВведите индекс колеса (1-%d): ", wheelsNum);
             int index = s.nextInt();
             if (index<=wheelsNum && index > 0){
-                System.out.printf("\t\tEnter the tire percentage: ");
+                System.out.printf("\t\tНа сколько процентов стереть шину: ");
                 wheels.get(--index).tireRubbing(s.nextDouble());
             } else {
-                System.out.println("\t\tYou entered wrong index.");
+                System.out.println("\t\t.Колеса с таким индеексом не существует.");
             }
         } else {
-            System.out.println("\t\tThere are no wheels.");
+            System.out.println("\t\tВсе колёса сняты.");
         }
     }
 
@@ -227,7 +219,7 @@ public class Car {
                 wheels.get(i).getInfo();
             }
         } else {
-            System.out.println("\t\tThere are no wheels.");
+            System.out.println("\t\tВсе колёса сняты.");
         }
     }
 
@@ -235,7 +227,7 @@ public class Car {
 
     public void changeDoorState(boolean open){
         if (doorsNum >0) {
-            System.out.printf("\t\tEnter the number of the door (1-%d): ", wheelsNum);
+            System.out.printf("\t\tВведите индекс двери (1-%d): ", doorsNum);
             int index = s.nextInt();
             if (index<=doorsNum && index > 0){
                 index--;
@@ -245,61 +237,55 @@ public class Car {
                     doors.get(index).closeTheDoor();
                 }
             } else {
-                System.out.println("\t\tYou entered wrong index.");
+                System.out.println("\t\tДвери с таким индексом не сщуствует.");
             }
         } else {
-            System.out.println("\t\tThere are no doors.");
+            System.out.println("\t\tВ машине нет дверей.");
         }
     }
 
     public void doorsInfo(){
-        System.out.println("\nTotal number of doors: " + doorsNum);
+        System.out.println("\nОбщее количество дверей: " + doorsNum);
         if (doorsNum >0) {
             for (int i = 0; i < doorsNum; i++){
                 System.out.print("\t\t" + (i+1) + " - ");
                 doors.get(i).getDoorInfo();
             }
         } else {
-            System.out.println("\t\tThere are no doors.");
+            System.out.println("\t\tВ машине нет дверей.");
         }
         System.out.println("");
     }
 
     /////////////////Windows/////////////////
 
-    public void changeWindowState(boolean open){
+    public void changeWindowState(){
         if (doorsNum >0) {
-            System.out.printf("\t\tEnter the number of the window (1-%d): ", doorsNum);
+            System.out.printf("\t\tВведите индекс окна (1-%d): ", doorsNum);
             int index = s.nextInt();
             if (index<=doorsNum && index > 0){
                 index--;
-                if (!doors.get(index).isWindowOpened() && open){
-                    doors.get(index).changeWindowState();
-                } else {
-                    if (doors.get(index).isWindowOpened() && !open) {
-                        doors.get(index).changeWindowState();
-                    }
-                }
+                doors.get(index).changeWindowState();
             } else {
-                System.out.println("\t\tYou entered wrong index.");
+                System.out.println("\t\tОкна с таким индексом не существует.");
             }
         } else {
-            System.out.println("\t\tThere are no doors.");
+            System.out.println("\t\tВ машине нет окон.");
         }
     }
     /////////////////General/////////////////
 
     public void getInfo(){
-        System.out.println("GENERAL INFORMATION");
-        System.out.println("\tYear of manufacture:\t" + year);
-        System.out.println("\tEngine type:\t" + engineType);
-        System.out.println("\tAcceleration time:\t" + accelerationTime);
-        System.out.println("\tSPEED:\n\t\tMaximum speed:\t" + maxSpeed);
-        System.out.printf("\t\tCurrent speed:\t%d\n", currentSpeed);
+        System.out.println("ОБЩА ИНФОРМАЦИЯ");
+        System.out.println("\tДата производства:\t" + year);
+        System.out.println("\tТип двигателя:\t" + engineType);
+        System.out.println("\tВремя разгона:\t" + accelerationTime);
+        System.out.println("\tМаксимальная скорость:\t" + maxSpeed);
+        System.out.printf("\tТекущая скорость:\t%d\n", currentSpeed);
         countMaxCurrentSpeed();
-        System.out.println("\tPASSENGERS:\n\t\tSeating capacity:\t" + seatingCapacity);
-        System.out.println("\t\tCurrent passengers number:\t" + currentPassNum);
-        System.out.printf("\tDoors number:\t%d\n\tWheels number: \t%d\n", doorsNum, wheelsNum);
+        System.out.println("\tПассажировместимость:\t" + seatingCapacity);
+        System.out.println("\t\tТекущее количество пассажиров:\t" + currentPassNum);
+        System.out.printf("\tКоличество дверей:\t%d\n\tКоличетсов колёс: \t%d\n", doorsNum, wheelsNum);
     }
 
     /*public Car(int year, String engineType, int maxSpeed, int accelerationTime, int seatingCapacity,

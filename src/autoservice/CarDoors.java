@@ -31,11 +31,11 @@ public class CarDoors {
     }
 
     public void getDoorInfo(){
-        System.out.println("door is " + (doorOpened ? "opened." : "closed."));
+        System.out.println("дверь " + (doorOpened ? "открыта." : "закрыта."));
     }
 
     public void getWindowInfo(){
-        System.out.println("Window is " + (windowOpened ? "opened." : "closed."));
+        System.out.println("окно " + (windowOpened ? "открыто." : "закрыто."));
     }
 
 

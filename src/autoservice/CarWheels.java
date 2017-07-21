@@ -24,7 +24,7 @@ public class CarWheels {
     }
 
     public void getInfo(){
-        System.out.println("The tire state: " + tireState);
+        System.out.println("Состояние шины: " + tireState);
     }
 
 }
