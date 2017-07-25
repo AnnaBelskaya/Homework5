@@ -8,10 +8,6 @@ public class CarWheels {
 
     }
 
-    public CarWheels(double tireState){
-        this.tireState = tireState;
-    }
-
     public void changeTire(){
         tireState = 1.0;
     }
