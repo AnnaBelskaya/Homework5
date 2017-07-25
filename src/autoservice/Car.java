@@ -274,7 +274,7 @@ public class Car {
     /////////////////General/////////////////
 
     public void getInfo(){
-        System.out.println("ОБЩАZ ИНФОРМАЦИЯ");
+        System.out.println("ОБЩАЯ ИНФОРМАЦИЯ");
         System.out.println("\tДата производства:\t" + year);
         System.out.println("\tТип двигателя:\t" + engineType);
         System.out.println("\tВремя разгона:\t" + accelerationTime);

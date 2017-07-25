@@ -28,7 +28,7 @@ public class CarDoors {
 /////Избыточный код
 
 
-    public CarDoors(boolean doorOpened, boolean windowOpened){
+   /* public CarDoors(boolean doorOpened, boolean windowOpened){
         this.doorOpened = doorOpened;
         this.windowOpened = windowOpened;
     }
@@ -55,6 +55,6 @@ public class CarDoors {
 
     public void setWindowOpened(boolean windowOpened){
         this.windowOpened = windowOpened;
-    }
+    }*/
 
 }
