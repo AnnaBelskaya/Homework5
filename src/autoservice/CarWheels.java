@@ -8,7 +8,7 @@ public class CarWheels {
 
     }
 
-    public void changeTire(){
+    public void setNewTire(){
         tireState = 1.0;
     }
 

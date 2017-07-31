@@ -188,7 +188,7 @@ public class Car {
             System.out.printf("\t\tВведите индекс колеса (1-%d): ", wheelsNum);
             int index = s.nextInt();
             if (index<=wheelsNum && index > 0){
-                wheels.get(--index).changeTire();
+                wheels.get(--index).setNewTire();
             } else {
                 System.out.println("\t\tКолеса с таким индеексом не существует.");
             }
@@ -285,15 +285,5 @@ public class Car {
         System.out.println("\tТекущее количество пассажиров:\t" + currentPassNum);
         System.out.printf("\tКоличество дверей:\t%d\n\tКоличество колёс: \t%d\n", doorsNum, wheelsNum);
     }
-
-    /*public Car(int year, String engineType, int maxSpeed, int accelerationTime, int seatingCapacity,
-               int currentPassnum){
-        this.year = year;
-        this.maxSpeed = maxSpeed;
-        this.accelerationTime = accelerationTime;
-        this.seatingCapacity = seatingCapacity;
-        this.currentPassnum = currentPassnum;
-        this.currentSpeed = currentSpeed;
-    }*/
 
 }
